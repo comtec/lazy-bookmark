@@ -1,0 +1,19 @@
+{
+  "name": "lazy-bookmark",
+  "version": "0.0.0",
+  "description": "bookmark to slack for lazy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Takanori Komura",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "basic-auth-connect": "^1.0.0",
+    "express": "^4.13.4",
+    "lodash": "^4.13.1",
+    "ogp-parser": "^0.3.0",
+    "slack-node": "^0.2.0"
+  }
+}
