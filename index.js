@@ -1,17 +1,22 @@
-// var config = require('./config');
 var express = require('express');
 var basicAuth = require('basic-auth-connect');
 var waterfall = require('async/waterfall');
 var ogp = require('ogp-parser');
 var _ = require('lodash');
 var Slack = require('slack-node');
+// var config = require('./config');
 
 var app = express();
 
-
+// add start option to use lazy-bookmark
 var user = process.env.BASIC_AUTH_USERNAME || '';
 var passwd = process.env.BASIC_AUTH_PASSWORD || '';
 var webhookUri = process.env.WEBHOOKURI || '';
+
+// or add config.json to use lazy-bookmark
+// var user = config.user || '';
+// var passwd = config.passwd || '';
+// var webhookUri = config.webhookUri || '';
 
 if (!user || !passwd || !webhookUri) {
     return;
