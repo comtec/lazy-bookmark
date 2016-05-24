@@ -45,3 +45,4 @@ Temporary Items
 ### lazy-bookmark ###
 config.json
 node_modules
+*.log

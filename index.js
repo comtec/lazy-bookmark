@@ -1,4 +1,4 @@
-var config = require('./config');
+// var config = require('./config');
 var express = require('express');
 var basicAuth = require('basic-auth-connect');
 var waterfall = require('async/waterfall');
@@ -7,10 +7,19 @@ var _ = require('lodash');
 var Slack = require('slack-node');
 
 var app = express();
-app.use(basicAuth(config.user, config.passwd));
+
+
+var user = process.env.BASIC_AUTH_USERNAME || '';
+var passwd = process.env.BASIC_AUTH_PASSWORD || '';
+var webhookUri = process.env.WEBHOOKURI || '';
+
+if (!user || !passwd || !webhookUri) {
+    return;
+}
+
+app.use(basicAuth(user, passwd));
 
 var slack = new Slack();
-var webhookUri = config.webhookUri;
 slack.setWebhook(webhookUri);
 
 app.get('/bookmark/:channel', function(req, res) {
