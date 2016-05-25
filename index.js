@@ -1,3 +1,9 @@
+/**
+ * @license lazy-bookmark
+ * (c) 2016 Takanori Komura https://twitter.com/komura_takanori
+ * License: MIT
+ */
+
 var express = require('express');
 var basicAuth = require('basic-auth-connect');
 var waterfall = require('async/waterfall');
