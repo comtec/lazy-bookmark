@@ -1,6 +1,6 @@
 {
   "name": "lazy-bookmark",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "bookmark to slack for lazy",
   "main": "index.js",
   "scripts": {
